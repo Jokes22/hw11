@@ -1,8 +1,8 @@
 public class Main {
 
 
-    public static int year() {
-        int year = 2023;
+    public static int yearCheak(int year) {
+
         if (year % 4 == 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным");
         } else {
@@ -10,9 +10,9 @@ public class Main {
         return year;
     }
 
-    public static int OS() {
-        int clientOS = 1;
-        int clientDeviceYear = 2015;
+    public static int OsVersion(int clientOS, int clientDeviceYear) {
+
+
         if (clientOS == 1) {
             System.out.println("Клиент пользуется операционной системой IOS");
             if (clientDeviceYear >= 2015) {
@@ -33,26 +33,29 @@ public class Main {
         return clientOS;
     }
 
-    public static int bank() {
-        int deliveryDistance = 95;
+    public static int daysToDelivery (int deliveryDistance) {
 
-        int deliverydays = 1;
-        int deliverydays2 = 2;
-        int deliverydays3 = 3;
+        int deliveryday = 1;
+        int deliveryday2 = 2;
+        int deliveryday3 = 3;
+
         if (deliveryDistance < 20) {
-            System.out.println("Потребуется дней: " + deliverydays);
+            System.out.println("Потребуется дней: " + deliveryday );
+            return deliveryday;
         }
         if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            System.out.println("Потребуется дней: " + deliverydays2);
+            System.out.println("Потребуется дней: 2 " + deliveryday2 );
+            return deliveryday2;
         }
         if (deliveryDistance >= 60 && deliveryDistance < 100) {
-            System.out.println("Потребуется дней: " + deliverydays3);
+            System.out.println("Потребуется дней: 3 " + deliveryday3 );
+            return deliveryday3;
         }
-        if (deliveryDistance >100) {
+        if (deliveryDistance > 100) {
             System.out.println("Свыше 100 км доставки нет");
 
         }
-        return deliveryDistance;
+        return daysToDelivery(2);
     }
 
 
@@ -63,15 +66,15 @@ public class Main {
     }
     public static void task1 () {
         System.out.println("Задача 1");
-        year();
+        yearCheak(2023);
     }
 
     public static void task2 () {
         System.out.println("Задача 2");
-        OS();
+        OsVersion(1,2015);
     }
     public static void task3 () {
         System.out.println("Задача 3");
-        bank();
+        daysToDelivery(95);
     }
 }
